@@ -1,12 +1,11 @@
 import { useState } from 'react'
 
-function TaskCreator () {
+function TaskCreator ({ createNewTask }) {
   const [newTaskName, setNewTaskName] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // eslint-disable-next-line no-undef
-    localStorage.setItem('task', newTaskName)
+    createNewTask(newTaskName)
     setNewTaskName('')
   }
 
