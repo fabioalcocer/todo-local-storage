@@ -1,6 +1,19 @@
 import TaskRow from './TaskRow'
 
-function TasksTable ({ tasks, toggleTask }) {
+function TasksTable ({ tasks, toggleTask, showCompleted = false }) {
+  const taskTableRows = (doneValue) => {
+    console.log(doneValue)
+    return tasks
+      .filter((task) => task.done === doneValue)
+      .map((task) => (
+        <TaskRow
+          key={task.name}
+          task={task}
+          toggleTask={toggleTask}
+        />
+      ))
+  }
+
   return (
     <table>
       <thead>
@@ -8,15 +21,7 @@ function TasksTable ({ tasks, toggleTask }) {
           <th>Tasks</th>
         </tr>
       </thead>
-      <tbody>
-        {tasks.map((task) => (
-          <TaskRow
-            key={task.name}
-            task={task}
-            toggleTask={toggleTask}
-          />
-        ))}
-      </tbody>
+      <tbody>{taskTableRows(showCompleted)}</tbody>
     </table>
   )
 }
