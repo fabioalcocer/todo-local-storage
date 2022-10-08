@@ -10,8 +10,8 @@ function TaskCreator ({ createNewTask }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='my-2 row w-100 mx-0 pl-0'>
-      <div className='col-9 px-0'>
+    <form onSubmit={handleSubmit} className='my-2 row mx-auto justify-content-center'>
+      <div className='col-8 col-lg-9 px-0'>
         <input
           type='text'
           placeholder='Enter a new task'
@@ -20,8 +20,8 @@ function TaskCreator ({ createNewTask }) {
           className='form-control'
         />
       </div>
-      <div className='col-3 mb-2 ps-4 pe-0'>
-        <button className='btn btn-primary btn-md'>Save Task</button>
+      <div className='col-4 col-lg-3 mb-2 pe-0'>
+        <button className='btn btn-primary btn-md w-100'>Save Task</button>
       </div>
     </form>
   )

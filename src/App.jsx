@@ -45,7 +45,7 @@ function App () {
 
   return (
     <main className='bg-dark vh-100 text-white'>
-      <div className='container col-md-4 offset-md-4 pt-4'>
+      <div className='container col-lg-4 col-md-6 pt-4'>
         <TaskCreator createNewTask={createNewTask} />
         <TasksTable tasks={tasksItems} toggleTask={toggleTask} />
         <VisibilityControl
